@@ -1,30 +1,33 @@
 @extends('layout.principal')
 
+@section('busca')
+	<div class="col-xs-8">
+	   <input type="text" class="form-control" placeholder="searsh"><br>
+	 </div>
+@stop
+
 @section('conteudo')
 
-	<h1>Pessoas cadastradas</h1>
+		<table class="table table-striped" >
+			<thead>
+			
+			</thead>
+			<tbody>
+				@foreach ($eventos as $e)
+				<tr>
+					<td>{{$e->nome}}</td>
+					<td>{{$e->Descricao}}</td>
+				</tr>
 
-	<table class="table table-striped table-bordered" >
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Email</th>
-				<th>Idade</th>
-				<th>Cidade</th>
-			</tr>
-		</thead>
-		<tbody>
-			@foreach ($pessoas as $p)
-			<tr>
-				<td>{{$p->nome}}</td>
-				<td>{{$p->idade}}</td>
-				<td>{{$p->email}}</td>
-				<td>{{$p->cidade}}</td>
-			</tr>
+				@endforeach
+			</tbody>
+		</table>
 
-			@endforeach
-		</tbody>
-	</table>
+
+		<button type="button" class="btn">Postar novo evento</button>
+	
+
+
 
 	
 		

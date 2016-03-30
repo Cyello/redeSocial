@@ -7,14 +7,15 @@ use Illuminate\Http\Request;
 use redeSocial\Http\Requests;
 
 use redeSocial\Pessoa;
+use redeSocial\Evento;
 
 
 
 class PartyController extends Controller
 {
     public function index() {
-        $pessoas = Pessoa::all();
-    	return view('rede.listagem')->with('pessoas', $pessoas);
+        $eventos = Evento::all();
+    	return view('rede.listagem')->with('eventos', $eventos);
     }
 
     public function criar() {
